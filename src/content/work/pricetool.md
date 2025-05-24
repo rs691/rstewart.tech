@@ -2,8 +2,7 @@
 title: Pricing Tool
 subtitle: A brief description of Project 1 # Add this line
 publishDate: 2022-03-02 00:00:00
-img: /rstewart.tech/images/priceTool2.jpeg
-img_alt: icon
+img: /rstewart.tech/images/webtools2.png
 description: |
   Interactive Web Form
 tags:
