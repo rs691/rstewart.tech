@@ -17,7 +17,7 @@ interface Props {
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
 	const work = await getCollection('work');
-	return work.map((entry: CollectionEntry<'work'>) => ({
+	return work.map((entry) => ({
 		params: { slug: entry.id },
 		props: { entry },
 	}));
@@ -32,11 +32,11 @@ const { Content } = await render(entry);
 		<div class="stack gap-15">
 			<header>
 				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/astro-tailwinds/work/"><Icon icon="arrow-left" /> Projects</a>
+					<a class="back-link" href="/rstewart.tech/work/"><Icon icon="arrow-left" /> Projects</a>
 					<Hero title={entry.data.title} align="start">
 						<div class="details">
 							<div class="tags">
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+								{entry.data.tags.map((t: string) => <Pill>{t}</Pill>)}
 							</div>
 							<p class="description">{entry.data.description}</p>
 						</div>
