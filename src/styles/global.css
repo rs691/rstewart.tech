@@ -82,9 +82,14 @@
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-body: "Public Sans", var(--font-system);
   --font-brand: Rubik, var(--font-system);
-
+  --font-mono: "JetBrains Mono", "Courier New", Courier, monospace;
+  --font-heading: var(--font-brand);
+  /*Add Anybody font*/
+  --font-anybody: "Anybody", var(--font-system);
+  
   /* Transitions */
   --theme-transition: 0.2s ease-in-out;
+
 }
 
 :root.theme-dark {
@@ -108,7 +113,7 @@
 
   --accent-light: #1c0056;
   --accent-regular: #7611a6;
-  --accent-dark: #c561f6;
+  --accent-dark: #9375a2;
   --accent-overlay: hsla(280, 89%, 67%, 0.33);
   --accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
   --accent-text-over: var(--gray-0);
@@ -169,6 +174,9 @@ img {
 
 a {
   color: var(--link-color);
+font-size: var(--text-base);
+  text-decoration: none;
+  transition: color var(--theme-transition);
 }
 
 h1,
