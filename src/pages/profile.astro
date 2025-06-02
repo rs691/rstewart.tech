@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+import selfNoBackground from '../../public/images/selfNoBackground.png';
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
-import selfNoBackground from '../../public/images/selfNoBackground.png';
 ---
 
 <BaseLayout title="Profile | Robert Stewart" description="Profile  Robert Stewart Lorem Ipsum">
@@ -12,7 +12,7 @@ import selfNoBackground from '../../public/images/selfNoBackground.png';
 			<Hero
 				title="Robert Stewart"
 				subtitle="Software Engineer"
-				tagline="Hello, I currently live in the Omaha area."
+			
 			>
 				 <img
           alt="Robert Stewart's face"
@@ -25,7 +25,7 @@ import selfNoBackground from '../../public/images/selfNoBackground.png';
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
-					<h1>Profile</h1>
+				
 					<p>
 						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
 						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
@@ -68,8 +68,16 @@ import selfNoBackground from '../../public/images/selfNoBackground.png';
 	img {
 		margin-top: 1.5rem;
 		border-radius: 1.5rem;
-		
+		display: flex;
+    flex-direction: column;
+    align-items: center;
 		max-width: 100%; /* Added to ensure responsiveness */
+	}
+	.about > :global(:first-child) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
 	}
 
 	section {
@@ -115,5 +123,14 @@ import selfNoBackground from '../../public/images/selfNoBackground.png';
 			font-size: var(--text-lg);
 		}
 	}
+	.content {
+			grid-column: 2 / 4;
+		}
+	.content :global(p) {
+			margin: 0;
+			line-height: 1.5;
+			color: var(--gray-200);
+			font-size: var(--text-base);
+		}
 </style>
 

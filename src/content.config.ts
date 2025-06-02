@@ -21,6 +21,8 @@ export const collections = {
       email: z.string().email().optional(), // Use .email() for email validation
       website: z.string().url().optional(), // Use .url() for URL validation
       github: z.string().url().optional(),  // Use .url() for URL validation
+      project_image: z.string().optional(), // Optional project image
+      project_image_alt: z.string().optional(), // Optional alt text for project image
 		}),
   }
 

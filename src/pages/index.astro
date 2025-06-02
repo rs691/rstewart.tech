@@ -1,16 +1,12 @@
 ---
-import { getCollection } from "astro:content";
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
-import CallToAction from "../components/CallToAction.astro";
-import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 // Page section components
 import ContactCTA from "../components/ContactCTA.astro";
@@ -21,9 +17,6 @@ import selfy7 from "/public/images/selfy7.jpg";
 
 
 // Content Fetching: List four most recent work projects
-const projects = (await getCollection("work"))
-  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-  .slice(0, 4);
 ---
 
 <BaseLayout>
@@ -46,7 +39,7 @@ const projects = (await getCollection("work"))
         <img
           alt="Robert Stewart's face"
           width="300"
-          height="440"
+          height="340"
           src={selfy7.src}
         />
        
@@ -57,12 +50,14 @@ const projects = (await getCollection("work"))
   </div>
 </BaseLayout>
 
+
 <style>
-  .hero {
+ .hero {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center items horizontally */
     gap: 2rem;
+    text-align: center; /* Center text content as well */
   }
 
   .roles {
@@ -70,13 +65,16 @@ const projects = (await getCollection("work"))
   }
 
   .hero img {
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 3 / 4; /* Try a slightly taller ratio */
     object-fit: cover;
-    object-position: top;
+    object-position: top center; /* Try adjusting vertical position */
     border-radius: 1.5rem;
     box-shadow: var(--shadow-md);
-    font: var(--anybody);
     font-weight: 100;
+    max-width: 70%; /* Shrink the image a bit more on mobile */
+    height: auto;
+    margin-left: auto; /* Center the image block */
+    margin-right: auto;
   }
 
   @media (min-width: 50em) {
@@ -85,6 +83,8 @@ const projects = (await getCollection("work"))
       grid-template-columns: 6fr 4fr;
       padding-inline: 2.5rem;
       gap: 3.75rem;
+      align-items: start; /* Align items to the start in the grid layout */
+      text-align: left; /* Reset text alignment for larger screens */
     }
 
     .roles {
@@ -94,11 +94,44 @@ const projects = (await getCollection("work"))
     }
 
     .hero img {
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 3 / 4; /* Keep the same ratio for larger screens or adjust if needed */
       border-radius: 4.5rem;
       object-fit: cover;
+      max-width: none; /* Reset max-width for larger screens */
+      margin-left: 0;
+      margin-right: 0;
+      object-position: top; /* Revert object-position for larger screens */
     }
   }
+
+  @media (min-width: 50em) {
+    .hero {
+      display: grid;
+      grid-template-columns: 6fr 4fr;
+      padding-inline: 2.5rem;
+      gap: 3.75rem;
+      align-items: start; /* Align items to the start in the grid layout */
+      text-align: left; /* Reset text alignment for larger screens */
+    }
+
+    .roles {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .hero img {
+      aspect-ratio: 3 / 4; /* Keep the same ratio for larger screens or adjust if needed */
+      border-radius: 4.5rem;
+      object-fit: cover;
+      max-width: none; /* Reset max-width for larger screens */
+      margin-left: 0;
+      margin-right: 0;
+      object-position: top; /* Revert object-position for larger screens */
+    }
+  }
+
+
 
   /* ====================================================== */
 
