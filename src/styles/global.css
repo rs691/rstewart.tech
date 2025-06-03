@@ -66,7 +66,12 @@
     var(--custom-plum-dark)
   );
 
-
+  /* More Gradients */
+  --gradient-sunset: linear-gradient(135deg, #ffcc66, #ff785e, #ff5182);
+  --gradient-ocean: linear-gradient(135deg, #29abe2, #4f00bc);
+  --gradient-forest: linear-gradient(135deg, #8fbc8f, #2e8b57);
+  --gradient-purple-pink: linear-gradient(135deg, #c8a2c8, #ff69b4);
+  --gradient-blue-cyan: linear-gradient(135deg, #87ceeb, #00ced1);
 
   /* Gradients */
   --gradient-stop-1: var(--accent-light);
@@ -91,6 +96,8 @@
   );
   --gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 
+
+  
   /* Shadows */
   --shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01),
     0px 4px 2px rgba(9, 11, 17, 0.01), 0px 2px 2px rgba(9, 11, 17, 0.02),

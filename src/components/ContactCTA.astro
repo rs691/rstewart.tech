@@ -1,54 +1,73 @@
 ---
-import CallToAction from './CallToAction.astro';
-import Icon from './Icon.astro';
+import CallToAction from "./CallToAction.astro";
+import Icon from "./Icon.astro";
 ---
 
-<aside>
-	<h1>I would love to hear from you!</h1>
-	<CallToAction href="mailto:robert.stewart.m@outlook.com">
-		Send Me a Message
-		<Icon icon="paper-plane-tilt" size="1.2em" />
-	</CallToAction>
+<aside class="contact-me">
+  <h2>Let's connect!</h2>
+  <CallToAction href="mailto:robert.stewart.m@outlook.com">
+    Send me a message
+    <Icon icon="paper-plane-tilt" size="1.2em" />
+  </CallToAction>
 </aside>
 
 <style>
-	aside {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		
-		border-top: 1px solid var(--gray-800);
-		border-bottom: 1px solid var(--gray-800);
-		padding: 5rem 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
-	}
+  .contact-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 
-	h2 {
-		font-size: var(--text-xl);
-		text-align: center;
-		max-width: 26ch;
-		padding-left: 17%;
-	}
+    border-top: 1px solid var(--gray-800);
+    border-bottom: 1px solid var(--gray-800);
+    padding: 4rem 2rem;
+    background-color: var(--gray-999_40);
+ 
+    text-align: center;
+    max-width: 100%; /* Ensure it doesn't overflow */
+  }
 
-	aside > a:focus {
-		background-color: var(--gray-800);
-	}
+  .contact-me h2 {
+    font-size: var(--text-2xl);
+    max-width: 30ch;
+  }
 
-	@media (min-width: 50em) {
-		aside {
-			padding: 7.5rem;
-			padding-right: 18%;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		
-			
-		}
+  .contact-me > a:focus {
+    background-color: white;
+	   box-shadow: var(--shadow-sm);
+  }
 
-		h2 {
-			font-size: var(--text-3xl);
-			text-align: left;
-		}
-	}
+  @media (min-width: 58em) {
+    .contact-me {
+      background-color: transparent;
+      padding: 6rem; /* Reduce overall padding */
+      padding-left: 10%; /* Add some left margin */
+      padding-right: 10%; /* Add some right margin */
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4rem; /* Adjust gap between items */
+      text-align: left;
+      max-width: 80%; /* Optionally set a maximum width for the aside */
+      margin-left: auto;
+      margin-right: auto;
+      border: 0; /* Remove borders for a cleaner look */
+    }
+
+    .contact-me h2 {
+      font-size: var(--text-4xl);
+      max-width: none;
+      background-color: transparent; /* Remove background color */
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .contact-me h2 {
+      font-size: var(--text-4xl);
+    }
+    .contact-me a {
+      padding: 1.5rem 2rem;
+      font-size: var(--text-lg);
+    }
+  }
 </style>
