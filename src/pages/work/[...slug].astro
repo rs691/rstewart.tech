@@ -32,7 +32,7 @@ const { Content } = await render(entry);
 		<div class="stack gap-15">
 			<header>
 				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/rstewart.tech/work/"><Icon icon="arrow-left" /> Projects</a>
+					<a class="back-link-icon" href="/rstewart.tech/work/"><Icon icon="back" /> <p>Projects</p></a>
 					<Hero title={entry.data.title} align="start">
 						<div class="details">
 							<div class="tags">
@@ -61,6 +61,11 @@ const { Content } = await render(entry);
 </BaseLayout>
 
 <style>
+	p{
+		font-size: var(--text-lg);
+		line-height: 1.5;
+		color: var(--blue-700);
+	}
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--blue-700);
@@ -69,7 +74,14 @@ const { Content } = await render(entry);
 	.back-link {
 		display: none;
 	}
-
+	.back-link-icon {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--blue-700);
+		font-size: var(--text-lg);
+		text-decoration: none;
+	}
 	.details {
 		display: flex;
 		flex-direction: column;

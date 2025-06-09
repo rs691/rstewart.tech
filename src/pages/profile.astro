@@ -1,25 +1,26 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+ import Layout from '../layouts/Layout.astro';
 
 import selfNoBackground from '../../public/images/selfNoBackground.png';
-import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+
+
 ---
 
-<BaseLayout title="Profile | Robert Stewart" description="Profile  Robert Stewart Lorem Ipsum">
+<Layout title="Profile | Robert Stewart" description="Profile  Robert Stewart Lorem Ipsum">
+	<div class="wrapper">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
 				title="Robert Stewart"
 				subtitle="Software Engineer"
-			
 			>
-				 <img
-          alt="Robert Stewart's face"
-          width="300"
-          height="440"
-          src={selfNoBackground.src}
-        />
+				<img
+					alt="Robert Stewart's face"
+					width="300"
+					height="440"
+					src={selfNoBackground.src}
+				/>
 			</Hero>
 
 			<section>
@@ -54,11 +55,30 @@ import Hero from '../components/Hero.astro';
 			</section>
 		</main>
 
-		<ContactCTA />
-	</div>
-</BaseLayout>
-
+	</div>	
+</Layout>
 <style>
+
+</style>
+
+
+	<style>
+		:root {
+			--text-xl: 1.5rem;
+			--text-lg: 1.25rem;
+			--text-base: 1rem;
+			--gray-0: #f8f9fa;
+			--gray-200: #6c757d;
+			--theme-transition: 0.3s ease-in-out;
+		}
+	
+.wrapper {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+		background-color: var(--background-color);
+		color: var(--text-accent-color);
+	}
 	.about {
 		display: flex;
 		flex-direction: column;
@@ -133,4 +153,4 @@ import Hero from '../components/Hero.astro';
 			font-size: var(--text-base);
 		}
 </style>
-
+ 

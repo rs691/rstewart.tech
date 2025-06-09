@@ -1,0 +1,150 @@
+---
+// Learn about using Astro layouts:
+// https://docs.astro.build/en/core-concepts/layouts/
+
+// Component Imports
+import MainHead from '../components/MainHead.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string | undefined;
+	description?: string | undefined;
+	subtitle?: string | undefined;
+	tagline?: string | undefined;
+}
+
+const { title, description, subtitle, tagline } = Astro.props;
+---
+<html lang="en">
+    <head>
+        <MainHead title={title} description={description} subtitle={subtitle} tagline={tagline} />
+    </head>
+    <body>
+        <div class="stack backgrounds">
+            <Nav />
+            <slot />
+            <Footer />
+        </div>
+
+        <script>
+            // Add “loaded” class once the document has completely loaded.
+            addEventListener('load', () => document.documentElement.classList.add('loaded'));
+        </script>
+
+        <style>
+            :root {
+                --_placeholder-bg: linear-gradient(transparent, transparent);
+                --bg-image-main: url('../../public/images/bg-main-light-800w.jpg');
+                --bg-image-main: url('../../public/images/light-back-second.svg');
+                --bg-image-main-curves: url('../../public/images/bg-main-curves-light.svg');
+                --bg-image-main-curves: url('../../public/images/dark3colors.svg');
+                --bg-image-subtle-1: var(--_placeholder-bg);
+                --bg-image-subtle-2: var(--_placeholder-bg);
+                --bg-image-footer: var(--_placeholder-bg);
+                --bg-svg-blend-mode: overlay;
+                --bg-blend-mode: darken;
+                --bg-image-aspect-ratio: 2.25;
+                --bg-scale: 1.68;
+                --bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
+                --bg-gradient-size: calc(var(--bg-scale) * 100%); 
+                
+            }
+
+            :root.theme-dark {
+                /* To change dark mode background to a solid color,
+                   we override the background properties for the .backgrounds class here. */
+                --bg-image-main: none; /* Remove main background image */
+                --bg-image-main-curves-2: none; /* Remove curves image */
+                --bg-image-main-curves: none; /* Remove waves image */
+                --bg-image-subtle-1: none; /* Remove subtle image 1 */
+                --bg-image-subtle-2: none; /* Remove subtle image 2 */
+                --bg-image-footer: none; /* Remove footer image */
+                --bg-svg-blend-mode: normal; /* Reset blend mode */
+                --bg-blend-mode: normal; /* Reset blend mode */
+                --bg-gradient-size: auto; /* Reset gradient size */
+
+                /* New Dark Mode Colors */
+                --background-color: #2A233E;
+                --text-color: #FFFFFF; /* Assuming you want white text for dark mode */
+                --primary-color: #4A90E2;
+                --secondary-color: #50E3C2;
+                --text-accent-color: #FF7139;
+                
+            }
+
+            /* These backgrounds are displayed below the fold, so we lazy load them
+                once the `.loaded` class has been set.  */
+            :root.loaded {
+                --bg-image-subtle-1: url('../../public/images/bg-subtle-1-light-800w.jpg');
+                --bg-image-subtle-2: url('../../public/images/bg-subtle-2-light-800w.jpg');
+                
+            :root.loaded.theme-dark {
+                --bg-image-subtle-1: url('../../public/images/bg-subtle-1-dark-800w.jpg');
+                --bg-image-subtle-2: url('../../public/images/bg-6.png');
+
+            }
+
+            @media (min-width: 50em) {
+                :root {
+                    --bg-scale: 1;
+                    --bg-image-main: url('../../public/images/rainbow.svg');
+                }
+                :root.theme-dark {
+                    /* Ensure these are also set to 'none' if you want a solid color at larger breakpoints */
+                    --bg-image-main: none;
+                    --bg-image-subtle-1: none;
+                    --bg-image-subtle-2: none;
+                    --bg-image-footer: none;
+                }
+
+                :root.loaded {
+                    --bg-image-subtle-1: url('../../public/images/rainbow.svg');
+                    --bg-image-subtle-2: url('../../public/images/bg-subtle-2-light-1440w.jpg');
+                    --bg-image-footer: url('../../public/images/bg-footer-light-1440w.jpg');
+                }
+                :root.loaded.theme-dark {
+                    /* Ensure these are also set to 'none' if you want a solid color at larger breakpoints */
+                    --bg-image-subtle-1: none;
+                    --bg-image-subtle-2: none;
+                    --bg-image-footer: none;
+                }
+            }
+
+            .backgrounds {
+                min-height: 100%;
+                isolation: isolate;
+                /* Base background definition for all themes */
+                background:
+                    /*noise*/
+                    /* url('../../public/images/noise.png') top center/220px repeat, */
+                    /*footer*/ var(--bg-image-footer) bottom center/var(--bg-gradient-size) no-repeat,
+                    /*header1*/ var(--bg-image-main-curves) top center/var(--bg-gradient-size) no-repeat,
+                    /*header2*/ var(--bg-image-main) top center/var(--bg-gradient-size) no-repeat,
+                    /*base solid color*/ var(--gray-999); /* This is your base solid color variable */
+                background-blend-mode:
+                    /*noise*/
+                    overlay,
+                    /*footer*/ var(--bg-blend-mode),
+                    /*header1*/ var(--svg-blend-mode),
+                    /*header2*/ normal,
+                    /*base*/ normal;
+            }
+            
+            /* Override for dark mode to use a solid color */
+            :root.theme-dark .backgrounds {
+                background: var(--background-color); /* Using the new variable for dark mode background */
+                background-blend-mode: normal; /* Ensure no blending with non-existent layers */
+            }
+
+            @media (forced-colors: active) {
+                /* Deactivate custom backgrounds for high contrast users. */
+                .backgrounds {
+                    background: none;
+                    background-blend-mode: none;
+                    --bg-gradient-size: none;
+                }
+            }
+        </style>
+    </body>
+</html>
