@@ -1,23 +1,25 @@
 ---
-title: Full-Stack Django App
-subtitle: A brief description of Project 1 # Add this line
+title: Capstone Project 
+subtitle: My final project during undergad 
 publishDate: 2022-03-02 00:00:00
 img: /rstewart.tech/images/djangoWeb.png
 img_alt: icon
 description: |
-  Interactive Web Form
+  
 tags:
-  - Design
-  - Dev
-  - User Testing
+  - Django
+  - HTMX
+  - Project Management
+  - Unit Testing
+  - Kanban
 
-project_image: /rstewart.tech/djangoWeb.png
+project_image: /rstewart.tech/images/djangoSnakeHTMX.png
 project_image_alt: price tool
 ---
 
-## Level-two heading
+## Undergrad Capstone Project
 
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+> Full-Stack web application.
 
 Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
 
