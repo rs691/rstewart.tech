@@ -1,6 +1,6 @@
 ---
-title: Pricing Tool
-subtitle: A brief description of Project 1 # Add this line
+title: Job Parts and Pricing Tool
+subtitle: 
 publishDate: 2022-03-02 00:00:00
 img: /rstewart.tech/images/priceTool2.jpeg
 description: 
@@ -10,7 +10,7 @@ tags:
   - PHP
   - MySQL
 
-project_image: /rstewart.tech/images/webtools3.png
+project_image: /rstewart.tech/images/webtools2.png
 project_image_alt: price tool
 ---
 

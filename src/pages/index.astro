@@ -14,7 +14,8 @@ import Skills from "../components/Skills.astro";
 
 // page images- import the profile pic from images/public
 
-import selfy7 from "/public/images/selfy7.jpg";
+
+import profile1 from "/public/images/profile1.png";
 
 
 // Content Fetching: List four most recent work projects
@@ -39,15 +40,16 @@ import selfy7 from "/public/images/selfy7.jpg";
         <!-- add profilePic to an img -->
         <img
           alt="Robert Stewart's face"
-          width="280"
-          height="320"
-          src={selfy7.src}
+          width="340"
+          height="380"
+          src={profile1.src}
         />
     
       </header>
       <Skills />
     </div>
     <ContactCTA />
+ 
   </div>
 </BaseLayout>
 
@@ -219,7 +221,9 @@ import selfy7 from "/public/images/selfy7.jpg";
 
   .mention-card {
     display: flex;
-    height: 7rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 50%;
     justify-content: center;
     align-items: center;
     text-align: center;

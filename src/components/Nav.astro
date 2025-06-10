@@ -245,16 +245,18 @@ const isCurrentPage = (href: string) => {
 		flex-wrap: wrap;
 		gap: 0.625rem;
 		font-size: var(--icon-size);
-	}
+
+	} 
 
 	.social {
 		display: flex;
 		padding: var(--icon-padding);
 		text-decoration: none;
 		color: var(--accent-dark);
+		font-size: var(--icon-size);
+		size: 1.2em;
 		transition: color var(--theme-transition);
-		width: auto;
-		height: auto;
+
 	}
 
 	.social:hover,
@@ -330,7 +332,6 @@ const isCurrentPage = (href: string) => {
 
 		.menu-footer {
 			--icon-padding: 0.375rem;
-
 			justify-self: flex-end;
 			align-items: center;
 			padding: 0;
