@@ -36,10 +36,11 @@ const { title, description, subtitle, tagline } = Astro.props;
 		<style>
 			:root {
 				--_placeholder-bg: linear-gradient(transparent, transparent);
-				--bg-image-main: url('../../public/images/bg-main-light-800w.jpg');
-				--bg-image-main: url('../../public/images/light-back-second.svg');
-				--bg-image-main-curves: url('../../public/images/bg-main-curves-light.svg');
-				--bg-image-main-curves: url('../../public/images/dark3colors.svg');
+				/* --bg-image-main: url('../../public/images/bg-main-light-800w.jpg');
+				--bg-image-main: url('../../public/images/light-back-second.svg'); */
+				/* --bg-image-main-curves: url('../../public/images/bg-main-curves-light.svg');
+				--bg-image-main-curves: url('../../public/images/dark3colors.svg'); */
+			--bg-image-main-curves: url('../../public/images/bg-main-curves-light.svg');
 				--bg-image-subtle-1: var(--_placeholder-bg);
 				--bg-image-subtle-2: var(--_placeholder-bg);
 				--bg-image-footer: var(--_placeholder-bg);
@@ -53,10 +54,11 @@ const { title, description, subtitle, tagline } = Astro.props;
 			}
 
 			:root.theme-dark {
-				--bg-image-main: url('../../public/images/bg-main-dark-800w.jpg');
+				/* --bg-image-main: url('../../public/images/bg-main-dark-800w.jpg'); */
+				--bg-image-main: url('../../public/images/dgb8.png');
 				
 				--bg-image-main-curves-2: url('../../public/images/bg-main-dark.svg');
-				--bg-image-main-curves: url('../../public/images/waves.svg');
+				/* --bg-image-main-curves: url('../../public/images/waves.svg'); */
 				/* --bg-image-main: url('../../public/images/backCool.svg'); */
 
 			}
@@ -64,37 +66,33 @@ const { title, description, subtitle, tagline } = Astro.props;
 			/* These backgrounds are displayed below the fold, so we lazy load them
 			   once the `.loaded` class has been set.  */
 			:root.loaded {
-				--bg-image-subtle-1: url('../../public/images/bg-subtle-1-light-800w.jpg');
-				--bg-image-subtle-2: url('../../public/images/bg-subtle-2-light-800w.jpg');
+				--bg-image-subtle-1: url('../../public/images/cb6.png');
+				--bg-image-subtle-2: url('../../public/images/cb6.png');
 				
-			:root.loaded.theme-dark {
-				--bg-image-subtle-1: url('../../public/images/bg-subtle-1-dark-800w.jpg');
-				--bg-image-subtle-2: url('../../public/images/bg-6.png');
-				
-				--bg-image-footer: url('../../public/images/bg-footer-dark-800w.jpg');
-			}
-
+			
+		}
 			@media (min-width: 50em) {
 				:root {
 					--bg-scale: 1;
-					--bg-image-main: url('../../public/images/rainbow.svg');
+					--bg-image-main: url('../../public/images/cb6.png');
 				}
 				:root.theme-dark {
-					/* --bg-image-main: url('../../public/images/bg-main-dark-1440w.jpg'); */
-					--bg-image-main: url('../../public/images/background-dark-2.svg');
-					
+					/* --bg-image-main: url('../../public/images/bg-main-dark-1440w.jpg');
+					--bg-image-main: url('../../public/images/dgb8.png'); */
+								
 				}
 
 				:root.loaded {
 					--bg-image-subtle-1: url('../../public/images/rainbow.svg');
-					--bg-image-subtle-2: url('../../public/images/bg-subtle-2-light-1440w.jpg');
+					--bg-image-subtle-2: url('../../public/images/lb7.png');
 					--bg-image-footer: url('../../public/images/bg-footer-light-1440w.jpg');
 				}
 				:root.loaded.theme-dark {
-					--bg-image-subtle-1: url('../../public/images/noise.png');
-					--bg-image-subtle-2: url('../../public/images/bg-subtle-2-dark-800w.jpg');
-					--bg-image-footer: url('../../public/images/bg-footer-dark-800w.jpg');
-					--bg-image-footer: url('../../public/images/bg-footer-dark-1440w.jpg');
+					/* --bg-image-subtle-1: url('../../public/images/bg-subtle-1-dark-800w.jpg');
+					--bg-image-subtle-2: url('../../public/images/bg-6.png');
+
+					--bg-image-footer: url('../../public/images/bg-footer-dark-800w.jpg'); */
+					--bg-image-subtle-2: url('../../public/images/bg-drk-4.png');
 				}
 			}
 
@@ -123,6 +121,7 @@ const { title, description, subtitle, tagline } = Astro.props;
 					--bg-gradient-size: none;
 				}
 			}
+		
 		</style>
 	</body>
 </html>

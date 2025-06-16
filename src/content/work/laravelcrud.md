@@ -15,18 +15,4 @@ project_image: /rstewart.tech/images/crudImage.png
 project_image_alt: laravel crud
 ---
 
-
-## Support Ticket
-
-###
->
-> The Support Ticket CRUD Application is a comprehensive IT Support Ticket Management System developed using the Laravel framework. This application was designed to provide efficient management of support tickets, from creation to resolution, ensuring data integrity and streamlined workflows
-
-### Project
-
-Create a web application to to track support requests.
-
-#### Conclusion
-
-- We noted this
-- And also this other point
+## Project
