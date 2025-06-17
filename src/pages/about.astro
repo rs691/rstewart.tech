@@ -1,117 +1,125 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import possBack1 from '../../public/images/possBack1.png';
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
-
+import possBack1 from "../../public/images/possBack1.png";
+import Hero from "../components/Hero.astro";
 ---
 
-<BaseLayout title="About | Robert Stewart" description="About Robert Stewart Lorem Ipsum">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About Me"
-			>
-				<img
-					width="1253"
-					height="573"
-					src={possBack1.src}
-					alt="Robert Stewart at work "
-				/>
-			</Hero>
+<BaseLayout title="About | Robert Stewart" description="About Robert Stewart">
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero title="About Me">
+        <img
+          width="1253"
+          height="573"
+          src={possBack1.src}
+          alt="Robert Stewart at work "
+        />
+      </Hero>
 
-			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-						Hi, My name is Robert Stewart. Apart from being a software developer, i'm also a parent of three amazing kids.
-						I have a background in computer science and during my time at an amazing company, I have worked on various projects.
-						These projects ranged from web development to mobile applications. I enjoy learning new technologies
-						and applying them to real-world problems. In my free time, I love spending time with my
-						kids, playing outside, swimming, and playing video games. I believe in continuous
-						learning and strive to improve my skills every day. I am excited to connect with
-						others in the tech community and share my knowledge and experiences. Thank you for
-						taking the time to learn more about me!
-					</p>
-					<p>
-						You can find me on <a href="https://rs691.github.io/rstewart.tech/">GitHub</a> and <a href="https://www.linkedin.com/in/robert-stewart-m">LinkedIn</a>.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>In 2022, I started my academic journey at Iowa Western Community College, where I received an Associates degree in Computer Programming. During my time there, I gained a solid foundation in programming languages, algorithms, and software development principles.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
-				</div>
-			</section>
-		</main>
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            Hi, My name is Robert Stewart. Apart from being a software
+            developer, i'm also a parent of three kids. I have a background in
+            computer science and have worked on various projects. These projects
+            ranged from web development to mobile applications. I enjoy learning
+            new technologies and applying them to real-world problems.
+          </p>
+          <p>
+            You can find me on <a href="https://rs691.github.io/rstewart.tech/"
+              >GitHub</a
+            > and <a href="https://www.linkedin.com/in/robert-stewart-m"
+              >LinkedIn</a
+            >.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <p>
+            In 2022, I started my academic journey at Iowa Western Community
+            College, where I received an Associates degree in Computer
+            Programming. During my time there, I gained a solid foundation in
+            programming languages, algorithms, and software development
+            principles. After that, I transferred to the University of Nebraska
+            at Omaha, where I am currently pursuing a Bachelor's degree in
+            Computer Science. My studies have allowed me to delve deeper into
+            advanced topics such as data structures, algorithms, and software
+            engineering practices.
+          </p>
+        </div>
+      </section>
+	   <section>
+      <h2 class="section-title">Skills</h2>
+      <div class="content">
+        <p>officia unde omnis</p>
+      </div>
+    </section>
+    </main>
+   
+  </div>
 
-		<ContactCTA />
-	</div>
+  <!-- <ContactCTA /> -->
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		
-		max-width: 100%; /* Added to ensure responsiveness */
-	}
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+    max-width: 100%; /* Added to ensure responsiveness */
+  }
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
 
-	.content {
-		grid-column: 2 / 4;
-	}
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+  .content {
+    grid-column: 2 / 4;
+  }
 
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
 </style>

@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 
-import Footer from '../components/Footer.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
@@ -35,7 +34,25 @@ const projects = (await getCollection('work')).sort(
 				}
 			</Grid>
 		</main>
-	<Footer />
+<!-- <ContactCTA /> -->
+ </div>
+ 	</BaseLayout>
+  <style>
+   .wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+   }
+   .stack {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+   }
+   .gap-20 {
+	gap: 20px;
+   }
+   .gap-8 {
+	gap: 8px;
+   }
+  </style>	
 
-   
-</BaseLayout>
