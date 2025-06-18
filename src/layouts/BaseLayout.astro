@@ -8,120 +8,119 @@ import Nav from '../components/Nav.astro';
 
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
-	subtitle?: string | undefined;
-	tagline?: string | undefined;
+    title?: string | undefined;
+    description?: string | undefined;
+    subtitle?: string | undefined;
+    tagline?: string | undefined;
 }
 
 const { title, description, subtitle, tagline } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<MainHead title={title} description={description} subtitle={subtitle} tagline={tagline} />
-	</head>
-	<body>
-		<div class="stack backgrounds">
-			<Nav />
-			<slot />
-			
-		</div>
+    <head>
+        <MainHead title={title} description={description} subtitle={subtitle} tagline={tagline} />
+    </head>
+    <body>
+        <div class="stack backgrounds">
+            <Nav />
+            <slot />
+            
+        </div>
 
-		<script>
-			// Add “loaded” class once the document has completely loaded.
-			addEventListener('load', () => document.documentElement.classList.add('loaded'));
-		</script>
+        <script>
+            // Add “loaded” class once the document has completely loaded.
+            addEventListener('load', () => document.documentElement.classList.add('loaded'));
+        </script>
 
-		<style>
-			:root {
-				
-	--bg-image-subtle-1: url('../../public/images/lb6.png');
-				--_placeholder-bg: linear-gradient(transparent, transparent);
-				--bg-image-main: url('../../public/images/cb6.png');
-				--bg-image-main: url('../../public/images/light-back-second.svg');
+        <style>
+            :root {
+                /* --- Light Mode Backgrounds --- */
+                --light-mode-gradient: linear-gradient(135deg, #a8dadc, #457b9d); /* Your beautiful gradient */
+				--light-mode-secondary-gradient: linear-gradient(135deg, #f1faee, #a8dadc); /* Optional secondary gradient */
+                /* Subtle grid: adjust stroke (color, opacity) and stroke-width as needed */
+                --light-mode-grid-svg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="0.8"><path d="M0 0h100v100H0z"/><path d="M0 0L100 100M100 0L0 100"/></svg>');
+                
+                --grid-blur-amount: blur(2px); /* Adjust blur intensity */
+                --grid-opacity: 0.8; /* Adjust grid visibility */
 
-				--bg-image-main-curves: url('../../public/images/dark3colors.svg');
-				--bg-image-main-curves: url('../../public/images/bg-main-curves-light.svg');
-			
-				--bg-svg-blend-mode: overlay;
-				--bg-blend-mode: darken;
-				--bg-image-aspect-ratio: 2.25;
-				--bg-scale: 1.68;
-				--bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
-				--bg-gradient-size: calc(var(--bg-scale) * 100%); 
-				
-			}
+                /* Default background properties (for light mode) */
+                --main-background-layer: var(--light-mode-gradient);
+                --grid-image-layer: var(--light-mode-grid-svg);
+                --final-background-color: #F0F0F0; /* Fallback/base color if no gradient/image */
 
-			:root.theme-dark {
-				/* --bg-image-main: url('../../public/images/bg-main-dark-800w.jpg'); */
-				--bg-image-main: url('../../public/images/dgb8.png');
-				
-				--bg-image-main-curves-2: url('../../public/images/bg-main-dark.svg');
-				/* --bg-image-main-curves: url('../../public/images/waves.svg'); */
-				/* --bg-image-main: url('../../public/images/backCool.svg'); */
 
-			}
+                /* Original variables from your code (keeping them for now if other parts of your app use them) */
+                --_placeholder-bg: linear-gradient(transparent, transparent);
+                --bg-image-aspect-ratio: 2.25;
+                --bg-scale: 1.68;
+                --bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
+                --bg-gradient-size: calc(var(--bg-scale) * 100%); 
+            }
 
-			/* These backgrounds are displayed below the fold, so we lazy load them
-			   once the `.loaded` class has been set.  */
-			:root.loaded {
-				--bg-image-subtle-1: url('../../public/images/cb6.png');
-				--bg-image-subtle-2: url('../../public/images/cb6.png');
-				--bg-footer: url('../../public/images/1b7.png');
-			--bg-image-footer: url('../../public/images/1b7.png');
-			}
-			@media (min-width: 50em) {
-				:root {
-					--bg-scale: 1;
-					--bg-image-main: url('../../public/images/cb6.png');
-				}
-				:root.theme-dark {
-					/* --bg-image-main: url('../../public/images/bg-main-dark-1440w.jpg');
-					--bg-image-main: url('../../public/images/dgb8.png'); */
-								
-				}
+            /* --- Dark Mode Overrides --- */
+            :root.theme-dark {
+                --main-background-layer: url('../../public/images/dg1.png'); /* Dark mode background image */
+				--light-mode-gradient: none; /* Remove light mode gradient */
+                --grid-image-layer: none; /* No grid in dark mode */
+                --final-background-color: #090b11; /* Solid dark color */
+                
+                --grid-blur-amount: none; /* Remove blur in dark mode */
+                --grid-opacity: 1; /* Reset opacity */
+            }
 
-				:root.loaded {
-					--bg-image-subtle-1: url('../../public/images/lb7.png');
-					--bg-image-subtle-2: url('../../public/images/lb7.png');
-					--bg-image-footer: url('../../public/images/1b7.png');
-				}
-				:root.loaded.theme-dark {
-					/* --bg-image-subtle-1: url('../../public/images/bg-subtle-1-dark-800w.jpg');
-					--bg-image-subtle-2: url('../../public/images/bg-6.png');
+            /* Lazy load backgrounds (ensure these variables are set consistently with main/grid layers if used) */
+            :root.loaded {
+                /* If you want these to follow the main background, set them here */
+                /* For simplicity, we're focusing on .backgrounds below */
+            }
+            @media (min-width: 50em) {
+                :root {
+                    --bg-scale: 1;
+                }
+            }
 
-					/* --bg-image-footer: url('../../public/images/bg-footer-dark-800w.jpg'); */
-					--bg-image-subtle-2: url('../../public/images/bg-drk-4.png');
-				}
-			}
+            .backgrounds {
+                min-height: 100vh;
+                position: relative; /* Needed for pseudo-element positioning */
+                z-index: 0; /* Ensure content is above background */
+                overflow: hidden; /* To contain blur effects if they go beyond bounds */
 
-			.backgrounds {
-				min-height: 100vh;
-				isolation: isolate;
-				background:
-					/*noise*/
-					url('../../public/images/noise.png') top center/220px repeat,
-					/*footer*/ var(--bg-image-footer) bottom center/var(--bg-gradient-size) no-repeat,
-					/*header1*/ var(--bg-image-main-curves) top center/var(--bg-gradient-size) no-repeat,
-					/*header2*/ var(--bg-image-main) top center/var(--bg-gradient-size) no-repeat,
-					/*base*/ var(--gray-999);
-				background-blend-mode: /*noise*/
-					overlay,
-					
-					/*header1*/ var(--bg-svg-blend-mode),
-					/*header2*/ normal,
-					/*base*/ normal;
-			}
-			@media (forced-colors: active) {
-				/* Deactivate custom backgrounds for high contrast users. */
-				.backgrounds {
-					
-							background-blend-mode: none;
-							--bg-gradient-size: none;
-				}
-			}
-		
-		</style>
-	</body>
-</html>
+                /* Apply the main background layer directly to .backgrounds */
+                background: var(--main-background-layer);
+                background-color: var(--final-background-color); /* Fallback */
+
+                /* Add noise overlay if desired */
+                background-image: url('../../public/images/noise.png'), var(--main-background-layer);
+                background-position: top center, center;
+                background-size: 220px repeat, cover; /* Noise size, main background covers */
+                background-repeat: repeat, no-repeat;
+                background-blend-mode: overlay, normal;
+            }
+
+            /* Pseudo-element for the Blurred Grid */
+            .backgrounds::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: var(--grid-image-layer);
+                background-size: 100px 100px; /* Size of each grid cell */
+                background-repeat: repeat; /* Repeat the grid pattern */
+                
+                opacity: var(--grid-opacity);
+                filter: var(--grid-blur-amount);
+                -webkit-filter: var(--grid-blur-amount);
+                z-index: -1; /* Place behind the main .backgrounds content */
+            }
+
+            /* Original media query for forced colors */
+            @media (forced-colors: active) {
+                .backgrounds {
+                    background-blend-mode: none;
+                    --bg-gradient-size: none;
+                }
+            }
+        </style>
