@@ -9,6 +9,7 @@ tags:
   - jQuery
   - PHP
   - MySQL
+  - Bootstrap
 
 project_image: /rstewart.tech/images/webtools2.png
 project_image_alt: price tool
@@ -16,7 +17,7 @@ project_image_alt: price tool
 
 ## Pricing Estimate Tool
 
-> ggg
+>
  Following the current tech stack parameters and limitations, **Pricing Tool** is an interactive web-based application engineered to streamline the parts selection process. It achieves this by integrating user-provided project data with live pricing catalogs, ensuring users have access to the most current cost information
 
 The system architecture was intentionally designed to empower project managers with data-driven insights, facilitating optimized decision-making throughout the project lifecycle.
