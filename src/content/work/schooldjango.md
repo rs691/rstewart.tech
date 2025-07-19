@@ -4,7 +4,7 @@ subtitle: My Final Undergraduate Project
 publishDate: 2022-03-02 00:00:00
 img: /rstewart.tech/images/djangoResume2.png
 img_alt: Django Resume Icon
-description: This project involved developing a full-stack web application as a capstone for my undergraduate studies. It utilized Django and HTMX, incorporating project management methodologies like Kanban and extensive unit testing.
+description:
 tags:
   - Django
   - HTMX
