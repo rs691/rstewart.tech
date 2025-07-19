@@ -4,7 +4,7 @@ subtitle: Building an Efficient IT Support Management System
 publishDate: 2022-03-02 00:00:00
 img: /rstewart.tech/images/itSupport2.png
 img_alt: IT Support Icon
-description: This project focused on developing a CRUD (Create, Read, Update, Delete) application using the Laravel framework. The goal was to create an efficient system for managing IT support issues, incorporating principles of cloud computing, server development, and security.
+description: 
 tags:
   - Cloud Computing
   - Server Development
