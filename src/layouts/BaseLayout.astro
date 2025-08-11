@@ -36,11 +36,9 @@ const { title, description, subtitle, tagline } = Astro.props;
         <style>
             :root {
                 /* --- Light Mode Backgrounds --- */
-                --light-mode-gradient: linear-gradient(135deg, #a8dadc, #457b9d); /* Your beautiful gradient */
-				--light-mode-secondary-gradient: linear-gradient(135deg, #f1faee, #a8dadc); /* Optional secondary gradient */
-                /* Subtle grid: adjust stroke (color, opacity) and stroke-width as needed */
-                --light-mode-grid-svg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="0.8"><path d="M0 0h100v100H0z"/><path d="M0 0L100 100M100 0L0 100"/></svg>');
-                
+                --light-mode-gradient: white; /* Your beautiful gradient */
+               
+
                 --grid-blur-amount: blur(2px); /* Adjust blur intensity */
                 --grid-opacity: 0.8; /* Adjust grid visibility */
 
@@ -60,7 +58,7 @@ const { title, description, subtitle, tagline } = Astro.props;
 
             /* --- Dark Mode Overrides --- */
             :root.theme-dark {
-                --main-background-layer: url('../../public/images/dg1.png'); /* Dark mode background image */
+                --main-background-layer: black; /* Dark mode background image */
 				--light-mode-gradient: none; /* Remove light mode gradient */
                 --grid-image-layer: none; /* No grid in dark mode */
                 --final-background-color: #090b11; /* Solid dark color */
