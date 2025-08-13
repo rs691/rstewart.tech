@@ -105,7 +105,7 @@
   --black-100: #0A0B11;
   --black-200: #1B1A1C;
 
-
+  --accent-yellow: #FFE100;
   --accent-light: #1c0056;
   --accent-regular: #7611a6;
   --accent-dark: #c561f6;
@@ -114,6 +114,7 @@
   --accent-text-over: var(--gray-0);
 
   --link-color: var(--accent-dark);
+  --link-hover-color: var(--accent-yellow);
 
   --gradient-stop-1: #4c11c6;
   --gradient-subtle: linear-gradient(
