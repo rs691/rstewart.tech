@@ -19,10 +19,13 @@ const { data, id } = Astro.props.project;
 		grid-template: auto 1fr / auto 1fr;
 		height: 10rem;
 		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
+		border: 2px solid purple;
 		border-radius: 0.75rem;
 		overflow: hidden;
-		box-shadow: var(--shadow-sm);
+		/* box-shadow: var(--shadow-lg); */
+		transition: border-color var(--theme-transition);
+		/* // make the shadow glow a slight orange while*/
+		box-shadow: 0 0 1rem #FF8040;
 		text-decoration: none;
 		font-family: var(--font-brand);
 		font-size: var(--text-lg);
@@ -32,8 +35,8 @@ const { data, id } = Astro.props.project;
 
 	.card:hover {
 		box-shadow: var(--shadow-md);
-		transform: scale(1.04); /* Added hover effect */
-		
+		transform: scale(1.02); /* Added hover effect */
+
 		transition: box-shadow var(--theme-transition), transform var(--theme-transition); /* Updated transition for smooth scaling and shadow */
 	}
 

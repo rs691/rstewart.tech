@@ -18,7 +18,7 @@ import Grid from './Grid.astro';
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['"Robert is a great tutor."', '"Robert, I wanted to say thank you for your help with my web development project."', '"The Next Web"', '"Scholarships."', '"TechCrunch"'].map((brand) => (
+							['"I can whole-heartedly say that without Robert\'s help, I would of failed my "Intro To Programming" class last semester."', '"Robert, I wanted to say thank you for your help with my web development project."', '"Robert helped me on his own time when we ran out of time"', '"The session ended and instead of him ending the zoom call, he stayed on longer and into his own time helping me finish my project."'].map((brand) => (
 								<li class="mention-card">
 									<p>{brand}</p>
 								</li>
@@ -119,9 +119,9 @@ import Grid from './Grid.astro';
 
 	@media (min-width: 50em) {
 		.section {
-			grid-template-columns: repeat(4, 1fr);
+			grid-template-columns: repeat(2, 1fr);
 			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
-			gap: 5rem;
+			gap: 4rem;
 		}
 
 		.section.with-cta {
