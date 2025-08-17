@@ -29,6 +29,16 @@
   --accent-overlay: hsla(280, 89%, 67%, 0.33);
   --accent-subtle-overlay: var(--accent-overlay);
   --accent-text-over: var(--gray-999);
+  /*borders*/
+  --border-color: var(--gray-200);
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-sm: 0.25rem;
+  --border-radius-xl: 999rem;
+
+  --shadow-color-1: var(--accent-dark);
+  --shadow-color-2: var(--accent-regular);
+  --shadow-color-3: var(--accent-light);
 
   --link-color: var(--accent-regular);
 

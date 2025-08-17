@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import tutoringRobotPic from "../../public/images/tutoringRobotPic.jpg";
+import tutorPic from "../../public/images/tutorPic.png";
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
 // import Testimonials from "../components/Testimonials.astro";
@@ -20,7 +20,7 @@ import Hero from "../components/Hero.astro";
         <img
           width="1253"
           height="573"
-          src={tutoringRobotPic.src}
+          src={tutorPic.src}
           alt="Robert Stewart at work with a colleague, illustrating a collaborative and engaging tutoring environment."
         />
       </Hero>
@@ -89,13 +89,14 @@ import Hero from "../components/Hero.astro";
     margin-top: 1.5rem;
     border-radius: 1.5rem;
     max-width: 100%; /* Added to ensure responsiveness */
+    height: auto; /* Maintain aspect ratio */
   }
 
   section {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    color: var(--gray-200);
+    color: var(--gray-100);
   }
 
   .section-title {

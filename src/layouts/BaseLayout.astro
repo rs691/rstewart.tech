@@ -34,49 +34,6 @@ const { title, description, subtitle, tagline } = Astro.props;
         </script>
 
         <style>
-            :root {
-                /* --- Light Mode Backgrounds --- */
-                --light-mode-gradient: white; /* Your beautiful gradient */
-                --link-hover-color: var(--accent-yellow);
-
-                --grid-blur-amount: blur(2px); /* Adjust blur intensity */
-                --grid-opacity: 0.8; /* Adjust grid visibility */
-
-                /* Default background properties (for light mode) */
-                --main-background-layer: var(--light-mode-gradient);
-                --grid-image-layer: var(--light-mode-grid-svg);
-                --final-background-color: #F0F0F0; /* Fallback/base color if no gradient/image */
-
-
-                /* Original variables from your code (keeping them for now if other parts of your app use them) */
-                --_placeholder-bg: linear-gradient(transparent, transparent);
-                --bg-image-aspect-ratio: 2.25;
-                --bg-scale: 1.68;
-                --bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
-                --bg-gradient-size: calc(var(--bg-scale) * 100%); 
-            }
-
-            /* --- Dark Mode Overrides --- */
-            :root.theme-dark {
-                --main-background-layer: black; /* Dark mode background image */
-				--light-mode-gradient: none; /* Remove light mode gradient */
-                --grid-image-layer: none; /* No grid in dark mode */
-                --final-background-color: #090b11; /* Solid dark color */
-                
-                --grid-blur-amount: none; /* Remove blur in dark mode */
-                --grid-opacity: 1; /* Reset opacity */
-            }
-
-            /* Lazy load backgrounds (ensure these variables are set consistently with main/grid layers if used) */
-            :root.loaded {
-                /* If you want these to follow the main background, set them here */
-                /* For simplicity, we're focusing on .backgrounds below */
-            }
-            @media (min-width: 50em) {
-                :root {
-                    --bg-scale: 1;
-                }
-            }
 
             .backgrounds {
                 min-height: 100vh;
@@ -89,7 +46,7 @@ const { title, description, subtitle, tagline } = Astro.props;
                 background-color: var(--final-background-color); /* Fallback */
 
                 /* Add noise overlay if desired */
-                background-image: url('../../public/images/noise.png'), var(--main-background-layer);
+                /* background-image: url('../../public/images/noise.png'), var(--main-background-layer); */
                 background-position: top center, center;
                 background-size: 220px repeat, cover; /* Noise size, main background covers */
                 background-repeat: repeat, no-repeat;
