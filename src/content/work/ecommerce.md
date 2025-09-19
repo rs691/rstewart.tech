@@ -2,7 +2,7 @@
 title: Full-Stack E-commerce Platform
 subtitle: Helping a Small Business Grow Its Customer Base
 publishDate: 2025-04-01 00:00:00
-img: /rstewart.tech/images/hydrogen2.png
+img: /rstewart.tech/images/ecom7.png
 img_alt: E-commerce Platform Icon
 description: |
 tags:
@@ -10,8 +10,8 @@ tags:
   - Full-Stack Development
   - Web Development
   - Business Growth
-project_image: /rstewart.tech/images/nextjsEcommerce.png
-project_image_alt: Next.js E-commerce Platform Screenshot
+project_image: /rstewart.tech/images/vercelStripeSupa.png
+project_image_alt: Vercel Supabase Stripe
 ---
 
 ### Full-Stack E-commerce Platform
@@ -29,3 +29,5 @@ Key aspects of this project included:
 * **Scalability and Performance:** Architecting the platform with scalability in mind to accommodate future business growth and ensure optimal performance even with increased traffic.
 
 This e-commerce platform serves as a vital tool for the small business to establish a strong online presence, reach a wider audience, and ultimately drive sales growth.
+
+Here is a link to a deployed version of  <a href="https://steffens-showcase.vercel.app"> Steffen's Showcase. 

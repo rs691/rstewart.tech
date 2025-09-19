@@ -1,8 +1,8 @@
 ---
 title: CRUD Application
 subtitle: Building an Efficient IT Support Management System
-publishDate: 2022-03-02 00:00:00
-img: /rstewart.tech/images/itSupport2.png
+publishDate: 2025-03-02 00:00:00
+img: /rstewart.tech/images/itcrud3.png
 img_alt: IT Support Icon
 description: 
 tags:
@@ -10,7 +10,7 @@ tags:
   - Server Development
   - Security Principles
   - Laravel Framework
-project_image: /rstewart.tech/images/crudImage.png
+project_image: /rstewart.tech/images/itcrud2.png
 project_image_alt: Laravel CRUD Application Screenshot
 ---
 

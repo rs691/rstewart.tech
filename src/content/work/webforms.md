@@ -2,7 +2,7 @@
 title: Web Form
 subtitle: A responsive web application for efficient data collection
 publishDate: 2022-03-02 00:00:00
-img: /rstewart.tech/images/responsiveForm.png
+img: /rstewart.tech/images/wform3.png
 img_alt: icon
 description: |
   
@@ -14,7 +14,7 @@ tags:
   - MySQL
   - Azure
 
-project_image: /rstewart.tech/images/wformcrop.png
+project_image: /rstewart.tech/images/wform5.png
 project_image_alt: price tool
 ---
 
