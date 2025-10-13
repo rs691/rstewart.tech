@@ -10,7 +10,7 @@ tags:
   - Server Development
   - Security Principles
   - Laravel Framework
-project_image: /rstewart.tech/images/itcrud2.png
+project_image: /rstewart.tech/images/itManag.png
 project_image_alt: Laravel CRUD Application Screenshot
 ---
 

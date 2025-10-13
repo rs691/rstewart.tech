@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import possBack1 from "../../public/images/possBack1.png";
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
 ---
@@ -10,12 +9,12 @@ import Hero from "../components/Hero.astro";
   <div class="stack gap-20">
     <main class="wrapper about">
       <Hero title="About Me">
-        <img
+        <!-- <img
           width="1253"
           height="573"
           src={possBack1.src}
           alt="Robert Stewart at work "
-        />
+        /> -->
       </Hero>
 
       <section>
@@ -86,10 +85,9 @@ import Hero from "../components/Hero.astro";
   img {
     margin-top: 1.5rem;
 
-    object-position: center;
+ 
     border-radius: 1.5rem;
-
-    max-width: 100%; /* Added to ensure responsiveness */
+    max-width: 95%; /* Added to ensure responsiveness */
   }
 
   section {
