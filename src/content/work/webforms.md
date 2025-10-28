@@ -27,3 +27,5 @@ To help minimize mistakes when entering data, the application includes dynamic f
 Additionally, the application uses AJAX to allow data to be sent without having to refresh the page. This means that users can submit forms quickly and have a smoother experience.
 
 On the backend, the application is built using PHP and MySQL, which provides a secure way to store and manage all the data collected from users.ously designed and built using PHP and MySQL. This robust setup securely stores and efficiently manages all submitted form data.
+
+Here is a link to a simplified version of a <a href="https://rs691.github.io/demo-webform/"> web form .
