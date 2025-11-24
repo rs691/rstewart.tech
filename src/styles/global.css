@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
@@ -21,9 +22,10 @@
   --gray-900: #f3f4f7;
   --gray-999-basis: 0, 0%, 100%;
   --gray-999_40: hsla(var(--gray-999-basis), 0.4);
-  --gray-999: #ffffff;
+  --gray-999: #C6D4D7;
   --black-100: #F5F5F5;
   --black-200: #E2E2E2;
+
 
 
   --accent-light: #c561f6;
@@ -105,6 +107,7 @@
   --gray-0: #ffffff;
   --gray-50: #f3f4f7;
   --gray-100: #e3e6ee;
+  --gray-150:#C6D4D7;
   --gray-200: #c3cadb;
   --gray-300: #a3acc8;
   --gray-400: #8490b5;
@@ -172,14 +175,14 @@ body {
 
 
 .theme-dark body {
-  background-image: url("../public/images/darkShapes.svg");
+  background-image: url("../public/images/pink-yellow2.png");
  
-  /* background-image: url("../public/images/darkRing.png"); */
+  /* background-image: url("../public/images/dark-shapes-back.png");  */
 /* shrink it */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center top;
+  background-position: center;
   /* The background-color will be visible behind the image */
 }
 

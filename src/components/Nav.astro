@@ -1,6 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import handshakeIcon from './public/images/handshakeIcon.png';
 import type { iconPaths } from '../components/IconPaths';
 
 /** Main menu items */
@@ -14,9 +15,10 @@ const textLinks: { label: string; href: string }[] = [
 
 
 /** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
+const iconLinks: { label: string; href: string; icon: (keyof typeof iconPaths) | { src: string; alt: string } }[] = [
 	{ label: 'GitHub', href: 'https://github.com/rs691', icon: 'github3' },
 	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/robert-stewart-m', icon: 'linkedin-logo' },
+	{ label: 'Handshake', href: 'https://app.joinhandshake.com/profiles/robertstewart', icon: { src: handshakeIcon.src, alt: 'Handshake' } },
 ];
 
 /** Test if a link is pointing to the current page. */
@@ -59,7 +61,11 @@ const isCurrentPage = (href: string) => {
 					iconLinks.map(({ href, icon, label }) => (
 						<a href={href} class="social">
 							<span class="sr-only">{label}</span>
-							<Icon icon={icon} />
+							{typeof icon === 'string' ? (
+								<Icon icon={icon} />
+							) : (
+								<img src={icon.src} alt={icon.alt} class="social-img-icon" />
+							)}
 						</a>
 					))
 				}
@@ -84,7 +90,11 @@ const isCurrentPage = (href: string) => {
 					iconLinks.map(({ href, icon, label }) => (
 						<a href={href} class="social">
 							<span class="sr-only">{label}</span>
-							<Icon icon={icon} />
+							{typeof icon === 'string' ? (
+								<Icon icon={icon} />
+							) : (
+								<img src={icon.src} alt={icon.alt} class="social-img-icon" />
+							)}
 						</a>
 					))
 				}
@@ -135,6 +145,7 @@ const isCurrentPage = (href: string) => {
 </script>
 
 <style>
+
 	nav {
 		z-index: 9999;
 		position: relative;
@@ -257,6 +268,11 @@ const isCurrentPage = (href: string) => {
 	.social:hover,
 	.social:focus {
 		color: var(--accent-yellow);
+	}
+
+	.social-img-icon {
+		width: var(--icon-size);
+		height: var(--icon-size);
 	}
 
 	.theme-toggle {
