@@ -22,6 +22,9 @@
   --gray-999-basis: 0, 0%, 100%;
   --gray-999_40: hsla(var(--gray-999-basis), 0.4);
   --gray-999: #ffffff;
+  --black-100: #F5F5F5;
+  --black-200: #E2E2E2;
+
 
   --accent-light: #c561f6;
   --accent-regular: #7611a6;
@@ -98,6 +101,7 @@
 }
 
 :root.theme-dark {
+/* Add an image as the dark mode background*/
   --gray-0: #ffffff;
   --gray-50: #f3f4f7;
   --gray-100: #e3e6ee;
@@ -163,7 +167,20 @@ body {
   color: var(--gray-200);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
+  line-height: 1.55;
+}
+
+
+.theme-dark body {
+  background-image: url("../public/images/darkShapes.svg");
+ 
+  /* background-image: url("../public/images/darkRing.png"); */
+/* shrink it */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  /* The background-color will be visible behind the image */
 }
 
 *,

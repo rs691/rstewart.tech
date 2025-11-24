@@ -55,7 +55,7 @@ const { title, description, subtitle, tagline } = Astro.props;
             :root.theme-dark {
                 /* To change dark mode background to a solid color,
                    we override the background properties for the .backgrounds class here. */
-                --bg-image-main: url('../../public/images/dg6blur.png'); /* Remove main background image */
+               
                 --bg-image-main-curves-2: none; /* Remove curves image */
                 --bg-image-main-curves: none; /* Remove waves image */
                 --bg-image-subtle-1: none; /* Remove subtle image 1 */
@@ -74,17 +74,10 @@ const { title, description, subtitle, tagline } = Astro.props;
                 
             }
 
-            /* These backgrounds are displayed below the fold, so we lazy load them
-                once the `.loaded` class has been set.  */
             :root.loaded {
-                --bg-image-subtle-1: url('../../public/images/bg-subtle-1-light-800w.jpg');
+                --bg-image-subtle-1: url('../../public/images/rainbow.svg');
                 --bg-image-subtle-2: url('../../public/images/bg-subtle-2-light-800w.jpg');
-                
-            :root.loaded.theme-dark {
-                --bg-image-subtle-1: url('../../public/images/bg-subtle-1-dark-800w.jpg');
-                --bg-image-subtle-2: url('../../public/images/bg-6.png');
-
-            }
+                --bg-image-footer: url('../../public/images/bg-footer-light-800w.jpg');
             }
 
             @media (min-width: 50em) {
