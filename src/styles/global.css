@@ -22,7 +22,7 @@
   --gray-900: #f3f4f7;
   --gray-999-basis: 0, 0%, 100%;
   --gray-999_40: hsla(var(--gray-999-basis), 0.4);
-  --gray-999: #C6D4D7;
+  --gray-999: #ffffff;
   --black-100: #F5F5F5;
   --black-200: #E2E2E2;
 
@@ -47,27 +47,34 @@
 
   --link-color: var(--accent-regular);
 
+  /* Backgrounds */
+  --bg-scale: 1;
+  --bg-image-subtle-1: none;
+  --bg-image-subtle-2: none;
+  --bg-gradient-size: 100%;
+  --bg-blend-mode: normal;
+  --main-background-layer: #ffffff;
+  --final-background-color: #ffffff;
+  --grid-image-layer: none;
+  /* Fallback or specific file if exists */
+  --grid-opacity: 0.1;
+  --grid-blur-amount: 0px;
+
   /* Gradients */
   --gradient-stop-1: var(--accent-light);
   --gradient-stop-2: var(--accent-regular);
   --gradient-stop-3: var(--accent-dark);
-  --gradient-subtle: linear-gradient(
-    150deg,
-    var(--gray-900) 19%,
-    var(--gray-999) 150%
-  );
-  --gradient-accent: linear-gradient(
-    150deg,
-    var(--gradient-stop-1),
-    var(--gradient-stop-2),
-    var(--gradient-stop-3)
-  );
-  --gradient-accent-orange: linear-gradient(
-    150deg,
-    #ca7879,
-    var(--accent-regular),
-    var(--accent-dark)
-  );
+  --gradient-subtle: linear-gradient(150deg,
+      var(--gray-900) 19%,
+      var(--gray-999) 150%);
+  --gradient-accent: linear-gradient(150deg,
+      var(--gradient-stop-1),
+      var(--gradient-stop-2),
+      var(--gradient-stop-3));
+  --gradient-accent-orange: linear-gradient(150deg,
+      #ca7879,
+      var(--accent-regular),
+      var(--accent-dark));
   --gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 
   /* Shadows */
@@ -103,11 +110,11 @@
 }
 
 :root.theme-dark {
-/* Add an image as the dark mode background*/
+  /* Add an image as the dark mode background*/
   --gray-0: #ffffff;
   --gray-50: #f3f4f7;
   --gray-100: #e3e6ee;
-  --gray-150:#C6D4D7;
+  --gray-150: #C6D4D7;
   --gray-200: #c3cadb;
   --gray-300: #a3acc8;
   --gray-400: #8490b5;
@@ -117,7 +124,7 @@
   --gray-800: #283044;
   --gray-900: #141925;
   --gray-999-basis: 225, 31%, 5%;
-  --gray-999: #090b11;
+  --gray-999: #000000;
 
   --black-100: #0A0B11;
   --black-200: #1B1A1C;
@@ -133,18 +140,26 @@
   --link-color: var(--accent-dark);
   --link-hover-color: var(--accent-yellow);
 
+  /* Backgrounds */
+  --bg-scale: 1;
+  --bg-image-subtle-1: none;
+  --bg-image-subtle-2: none;
+  --bg-gradient-size: 100%;
+  --bg-blend-mode: normal;
+  --main-background-layer: linear-gradient(180deg, #180028 0%, #000000 100%);
+  --final-background-color: #000000;
+  --grid-image-layer: none;
+  --grid-opacity: 0.2;
+  --grid-blur-amount: 0px;
+
   --gradient-stop-1: #4c11c6;
-  --gradient-subtle: linear-gradient(
-    150deg,
-    var(--gray-900) 19%,
-    var(--gray-999) 81%
-  );
-  --gradient-accent-orange: linear-gradient(
-    150deg,
-    #ca7879,
-    var(--accent-regular),
-    var(--accent-light)
-  );
+  --gradient-subtle: linear-gradient(150deg,
+      var(--gray-900) 19%,
+      var(--gray-999) 81%);
+  --gradient-accent-orange: linear-gradient(150deg,
+      #ca7879,
+      var(--accent-regular),
+      var(--accent-light));
   --gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
 
   --shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01),
@@ -175,10 +190,8 @@ body {
 
 
 .theme-dark body {
-  background-image: url("../../public/images/pink-yellow2.png");
- 
-  /* background-image: url("../public/images/dark-shapes-back.png");  */
-/* shrink it */
+  background-color: var(--black-100);
+  /* shrink it */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -262,24 +275,31 @@ h5 {
 .gap-2 {
   gap: 0.5rem;
 }
+
 .gap-4 {
   gap: 1rem;
 }
+
 .gap-8 {
   gap: 2rem;
 }
+
 .gap-10 {
   gap: 2.5rem;
 }
+
 .gap-15 {
   gap: 3.75rem;
 }
+
 .gap-20 {
   gap: 5rem;
 }
+
 .gap-30 {
   gap: 7.5rem;
 }
+
 .gap-48 {
   gap: 12rem;
 }
@@ -288,24 +308,31 @@ h5 {
   .lg\:gap-2 {
     gap: 0.5rem;
   }
+
   .lg\:gap-4 {
     gap: 1rem;
   }
+
   .lg\:gap-8 {
     gap: 2rem;
   }
+
   .lg\:gap-10 {
     gap: 2.5rem;
   }
+
   .lg\:gap-15 {
     gap: 3.75rem;
   }
+
   .lg\:gap-20 {
     gap: 5rem;
   }
+
   .lg\:gap-30 {
     gap: 7.5rem;
   }
+
   .lg\:gap-48 {
     gap: 12rem;
   }

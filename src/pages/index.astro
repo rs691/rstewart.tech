@@ -2,7 +2,6 @@
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-
 // Component Imports
 import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
@@ -13,14 +12,12 @@ import Skills from "../components/Skills.astro";
 
 // page images- import the profile pic from images/public
 
-
 import ContactCTA from "../components/ContactCTA.astro";
 import profile1 from "/public/images/profile1.png";
 ---
 
 <BaseLayout>
- 
-  <div class="stack gap-20 lg:gap-48">
+  <div class="stack gap-20">
     <div class="wrapper stack gap-8 lg:gap-20">
       <header class="hero">
         <Hero
@@ -29,11 +26,9 @@ import profile1 from "/public/images/profile1.png";
           align="start"
         >
           <div class="roles">
-
             <Pill><Icon icon="git-commit" size="1.45em" /> Commitment</Pill>
             <Pill><Icon icon="code" size="1.45em" /> Development</Pill>
             <Pill><Icon icon="kanban" size="1.45em" /> Teamwork</Pill>
-          
           </div>
         </Hero>
         <!-- add profilePic to an img -->
@@ -43,18 +38,15 @@ import profile1 from "/public/images/profile1.png";
           height="380"
           src={profile1.src}
         />
-    
       </header>
       <Skills />
     </div>
     <ContactCTA />
   </div>
- 
 </BaseLayout>
 
-
 <style>
- .hero {
+  .hero {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center items horizontally */
@@ -105,35 +97,6 @@ import profile1 from "/public/images/profile1.png";
       object-position: top; /* Revert object-position for larger screens */
     }
   }
-
-  @media (min-width: 50em) {
-    .hero {
-      display: grid;
-      grid-template-columns: 6fr 4fr;
-      padding-inline: 2.5rem;
-      gap: 3.75rem;
-      align-items: start; /* Align items to the start in the grid layout */
-      text-align: left; /* Reset text alignment for larger screens */
-    }
-
-    .roles {
-      margin-top: 0.5rem;
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .hero img {
-      aspect-ratio: 3 / 4; /* Keep the same ratio for larger screens or adjust if needed */
-      border-radius: 4.5rem;
-      object-fit: cover;
-      max-width: none; /* Reset max-width for larger screens */
-      margin-left: 0;
-      margin-right: 0;
-      object-position: top; /* Revert object-position for larger screens */
-    }
-  }
-
-
 
   /* ====================================================== */
 
