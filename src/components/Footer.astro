@@ -8,11 +8,14 @@ import Icon from "./Icon.astro";
     <p>All rights reserved.</p>
   </div>
   <div class="socials">
-    <a href="https://github.com/me" target="_blank" rel="noopener noreferrer" class="social-icon">
-      <Icon icon="github" />
+    <a href="https://github.com/rs691" target="_blank" rel="noopener noreferrer" class="social-icon">
+      <Icon icon="github3" />
     </a>
-    <a href="https://linkedin.com/in/me" target="_blank" rel="noopener noreferrer" class="social-icon">
+    <a href="https://www.linkedin.com/in/robert-stewart-m" target="_blank" rel="noopener noreferrer" class="social-icon">
       <Icon icon="linkedin-logo" />
+    </a>
+    <a href="https://app.joinhandshake.com/profiles/robertstewart" target="_blank" rel="noopener noreferrer" class="social-icon">
+      <Icon icon="handshake" />
     </a>
   </div>
 </footer>
@@ -37,21 +40,19 @@ import Icon from "./Icon.astro";
   footer {
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-footer);
-    justify-content: center;
-    align-items: center;
     gap: 3rem;
     margin-top: auto;
-    padding: 3rem 2rem 3rem;
+    padding: 3rem 1.5rem;
     text-align: center;
-    color: var(--gray-300);
-    font-size: var(--text-lg);
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    border-top: 1px solid var(--gray-800);
   }
 
   footer a {
     color: var(--gray-400);
     text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
+    text-underline-offset: 4px;
     transition: text-decoration-color var(--theme-transition);
   }
 
@@ -63,34 +64,32 @@ import Icon from "./Icon.astro";
   .group {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
+    gap: 0.5rem;
   }
+
   .socials {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.625rem;
-    font-size: var(--text-xl);
-    size: 1.2em;
     justify-content: center;
-    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   @media (min-width: 50em) {
     footer {
       flex-direction: row;
-      justify-content: center; /* Center horizontally */
-      align-items: center;     /* Center vertically */
-      padding: 2.5rem 5rem;
+      justify-content: space-between;
+      padding: 2.5rem 2.5rem;
+      max-width: 83rem;
+      margin-inline: auto;
     }
+
     .group {
-      align-items: center;
-      justify-content: center;
+      flex-direction: row;
+      gap: 1.5rem;
     }
+
     .socials {
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-end;
     }
   }
 </style>
